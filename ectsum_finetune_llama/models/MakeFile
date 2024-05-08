@@ -1,0 +1,13 @@
+# Download the model locally from hugging face model hub or move the quantised model the current directory
+# !wget https://huggingface.co/johnjoy77777/lora_model_ectsum_quant/lore_model_ectsum_quant-unsloth.Q4_K_M.gguf
+#  and run  ollama create ft-llama3-quant -f MakeFile in your terminal to create the ft-llama3-quant model
+# this allows you to run the model locally using ollama
+FROM ./lora_model_ectsum_quant-unsloth.Q4_K_M.gguf
+
+SYSTEM """
+- You are financial expert. 
+- You hear transcripts and summarize it for better understanding.
+- You should summarize the given input to crisp and short summary.
+- Follow the instructions provided in the prompt.
+- Summarize the call transcripts in 4-5 sentences.
+"""
