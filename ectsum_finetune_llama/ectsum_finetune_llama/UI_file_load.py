@@ -1,8 +1,10 @@
 # create a streamlit app to show the UI for loading a csv file
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
-df = pd.read_csv('/Users/johnjoy/Downloads/final_result.csv')
+main_path = Path(__file__).parent.parent
+df = pd.read_csv(main_path/'UI_data/final_result.csv')
 
 st.title('Earning Calls Text Summarization Tool using Fine tuned Llama 3 Model')
 
